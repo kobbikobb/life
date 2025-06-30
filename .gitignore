@@ -1,0 +1,17 @@
+# Ignore everything by default
+/*
+
+# Allow .gitkeep files to keep folders tracked
+!goals/.gitkeep
+!habits/.gitkeep
+!journal/.gitkeep
+!todo/.gitkeep
+!todo/archive/.gitkeep
+!_custom-templates/.gitkeep
+
+# Keep all files inside _templates
+!/_templates/**
+ 
+# Keep README and .gitignore
+!README.md
+!.gitignore
