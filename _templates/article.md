@@ -1,6 +1,6 @@
 ---
 categories:
-  - "[[Clippings]]"
+  - "[[Articles]]"
 date: 
 author: []
 url: 

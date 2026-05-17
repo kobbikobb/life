@@ -17,7 +17,7 @@ daily/        one file per day — habits + reflection
 todo/         all tasks (work + personal)
 projects/     ongoing multi-week initiatives
 notes/        meetings, ideas, evergreen thoughts
-references/   people, books, movies, clippings
+references/   people, books, movies, articles
 HOME.md       dashboard
 _templates/   all templates
 ```
@@ -42,7 +42,7 @@ _templates/   all templates
 | `person.md` | contact | `references/` |
 | `book.md` | book to read or finished | `references/` |
 | `movie.md` | movie to watch or watched | `references/` |
-| `clipping.md` | saved article or web clip | `references/` |
+| `article.md` | saved article or web clip | `references/` |
 
 ## Naming conventions
 
@@ -61,7 +61,7 @@ All templates use a consistent set of properties designed for Obsidian Bases fil
 
 | Field | Values |
 |-------|--------|
-| `categories` | `[[Meetings]]`, `[[People]]`, `[[Books]]`, `[[Movies]]`, `[[Clippings]]`, `[[Projects]]` |
+| `categories` | `[[Meetings]]`, `[[People]]`, `[[Books]]`, `[[Movies]]`, `[[Articles]]`, `[[Projects]]` |
 | `context` | `work`, `personal` |
 | `status` | `to-read` / `reading` / `done` (books) · `to-watch` / `watched` (movies) · `active` / `done` (projects) |
 | `rating` | `1–5` |
