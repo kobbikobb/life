@@ -81,7 +81,7 @@ EOF
 cat > "references/Example Person.example.md" << EOF
 ---
 categories:
-  - "[[People]]"
+  - People
 date: ${DATE}
 context: work
 org: Acme
@@ -105,7 +105,7 @@ EOF
 cat > "notes/${DATE}-1on1-example.example.md" << EOF
 ---
 categories:
-  - "[[Meetings]]"
+  - Meetings
 date: ${DATE}
 context: work
 org: Acme
@@ -146,7 +146,7 @@ EOF
 cat > "projects/example-project.example.md" << EOF
 ---
 categories:
-  - "[[Projects]]"
+  - Projects
 date: ${DATE}
 context: work
 status: active
@@ -172,7 +172,7 @@ EOF
 cat > "references/Example Book.example.md" << EOF
 ---
 categories:
-  - "[[Books]]"
+  - Books
 date: ${DATE}
 author:
   - "[[Example Author]]"
@@ -195,7 +195,7 @@ EOF
 cat > "references/Example Article.example.md" << EOF
 ---
 categories:
-  - "[[Articles]]"
+  - Articles
 date: ${DATE}
 author:
   - "[[Example Author]]"

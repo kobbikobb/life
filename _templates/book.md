@@ -1,6 +1,6 @@
 ---
 categories:
-  - "[[Books]]"
+  - Books
 date: 
 author: []
 genre: []

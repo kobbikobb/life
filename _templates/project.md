@@ -1,6 +1,6 @@
 ---
 categories:
-  - "[[Projects]]"
+  - Projects
 date: 
 context: work
 status: active
