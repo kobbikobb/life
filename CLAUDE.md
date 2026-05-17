@@ -2,6 +2,37 @@
 
 This is a personal life management vault in plain Markdown. Use this file to understand the structure before generating or editing notes.
 
+## AI use cases
+
+### 1. Create a daily note
+**When:** user asks to create today's note  
+**File:** `daily/YYYYMMDD.md` (e.g. `daily/20260517.md`)  
+**Template:** copy `_templates/daily.md`, fill `date:` with today's ISO date
+
+### 2. Weekly review from daily notes
+**Input:** paste 5–7 daily notes for the week  
+**Output:** summary of themes, completed work, mood trends, and next-week priorities  
+**Save to:** `notes/YYYY-MM-DD-week.md` with `tags: [weekly]`
+
+### 3. Meeting note → action items
+**Input:** paste a raw meeting note from `meetings/`  
+**Output:** bulleted action items with owner and due date, formatted for copy-paste into `todo/2-soon.md`  
+**Save to:** add `## Actions` block in the meeting note, items into todo
+
+### 4. Person synthesis from meeting notes
+**Input:** paste all meeting notes referencing a specific person  
+**Output:** updated `## Strengths`, `## Growth areas`, and `## Review notes` sections ready for their `references/` file  
+**Save to:** `references/Name.md`
+
+### 5. Capture → categorize
+**When:** user has a stray thought, article, or idea and asks where it goes  
+**Decision tree:**
+- Something to *do* → `todo/2-soon.md`
+- Something to *think about* / idea → `notes/YYYY-MM-DD-slug.md`
+- A person to remember → `references/Name.md`
+- A book or article → `references/Title.md`
+- An initiative spanning multiple weeks → `projects/slug.md`
+
 ## Vault structure
 
 | Folder | Contents | Naming pattern |
@@ -13,7 +44,9 @@ This is a personal life management vault in plain Markdown. Use this file to und
 | `meetings/` | Meeting notes (work + personal) | `YYYY-MM-DD-slug.md` |
 | `notes/` | Evergreen ideas, decisions, learnings | `YYYY-MM-DD-slug.md` |
 | `references/` | People, books, articles, movies | `Name.md` or `Title.md` |
-| `_templates/` | Blank templates for each note type | — |
+| `_templates/` | Canonical blank templates for each note type | — |
+
+For the exact frontmatter fields each note type requires, read the corresponding template in `_templates/`.
 
 ## Obsidian rules
 
@@ -36,7 +69,7 @@ author:
 ```
 
 **3. Naming conventions are load-bearing.**
-Obsidian Bases and Dataview queries filter by folder path. Wrong folder = note invisible to the right view.
+Obsidian Bases filters by folder path. Wrong folder = note invisible to the right view.
 
 | Folder | Pattern | Example |
 |--------|---------|---------|
@@ -50,6 +83,9 @@ Obsidian Bases and Dataview queries filter by folder path. Wrong folder = note i
 **4. Plain markdown only — no Obsidian-specific syntax in templates.**
 Templates must work in any editor. Do not add Dataview queries, Templater expressions, or callout syntax to templates. Keep those in vault-local files not tracked by git.
 
+**5. Coworker data is private.**
+Files in `references/` that contain coworker information (role, strengths, growth areas, review notes) must not be quoted, summarized, or sent to external services without explicit user confirmation in the current session.
+
 ## Frontmatter schema
 
 | Field | Type | Used in | Values |
@@ -59,23 +95,6 @@ Templates must work in any editor. Do not add Dataview queries, Templater expres
 | `context` | string | meetings, people, projects | `work`, `personal` |
 | `people` | list of wikilinks | meetings | `["[[Name]]"]` |
 | `topics` | list of strings | meetings, notes | free-form |
-| `tags` | list | daily, notes | `daily`, `0🌱`, `0🌲` |
+| `tags` | list | daily, notes, weekly | `daily` · `weekly` · `0🌱` (new/seedling idea) · `0🌲` (mature/evergreen idea) |
 | `status` | string | books, projects | `to-read`/`reading`/`done` · `active`/`done` |
 | `rating` | integer | books, articles | `1`–`5` |
-
-## AI use cases
-
-### 1. Weekly review from daily notes
-**Input:** paste 5–7 daily notes for the week  
-**Output:** summary of themes, completed work, mood trends, and next-week priorities  
-**Save to:** `notes/YYYY-MM-DD-weekly-review.md` with `tags: [weekly]`
-
-### 2. Meeting note → action items
-**Input:** paste a raw meeting note from `meetings/`  
-**Output:** bulleted action items with owner and due date, formatted for copy-paste into `todo/2-soon.md`  
-**Save to:** add `## Actions` block in the meeting note, items into todo
-
-### 3. Person synthesis from meeting notes
-**Input:** paste all meeting notes referencing a specific person  
-**Output:** updated `## Strengths`, `## Growth areas`, and `## Review notes` sections ready for their `references/` file  
-**Save to:** `references/Name.md`

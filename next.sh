@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -f "_templates/daily.md" ]; then
+  echo "Error: run from vault root" >&2
+  exit 1
+fi
+
 TODAY=$(date +%Y%m%d)
 DATE=$(date +%Y-%m-%d)
 HOUR=$(date +%H)
@@ -14,7 +19,7 @@ if [ ! -f "$DAILY" ]; then
 fi
 
 count() { grep -c "$1" "$2" 2>/dev/null | tr -d ' ' || echo 0; }
-lines() { grep "$1" "$2" 2>/dev/null | sed "s/$1 //" | grep -v '^$'; }
+lines() { grep "$1" "$2" 2>/dev/null | sed 's/^- \[ \] //' | grep -v '^$'; }
 
 echo "── $(date '+%a %d %b · %H:%M') ─────────────────────"
 
@@ -38,7 +43,7 @@ fi
 
 # Morning: show current goal focus
 if [ "$HOUR" -lt 10 ]; then
-  GOALS_FILE=$(ls goals/*.md 2>/dev/null | grep -v example | tail -1)
+  GOALS_FILE=$(ls goals/*.md 2>/dev/null | grep -v example | sort | tail -1)
   if [ -n "$GOALS_FILE" ]; then
     FOCUS=$(awk '/## Focus areas/{found=1; next} found && NF{print; exit}' "$GOALS_FILE")
     [ -n "$FOCUS" ] && echo "Focus   $FOCUS" && echo ""
@@ -48,7 +53,12 @@ fi
 # Evening: migration nudge
 if [ "$HOUR" -ge 16 ]; then
   OPEN=$(count '^\- \[ \]' todo/1-today.md)
-  [ "$OPEN" -gt 0 ] && echo "↳ $OPEN open task(s) — migrate or drop before tomorrow" && echo ""
+  if [ "$OPEN" -gt 0 ]; then
+    echo "↳ $OPEN open task(s) — migrate or drop before tomorrow"
+    echo ""
+  fi
+  NEXT=$(grep '^\- \[ \]' todo/2-soon.md 2>/dev/null | head -1 | sed 's/^- \[ \] //')
+  [ -n "$NEXT" ] && echo "Up next  $NEXT" && echo ""
 fi
 
 # Friday: create weekly review if missing
