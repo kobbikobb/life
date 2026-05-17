@@ -11,10 +11,3 @@ tags:
 
 ## Notes
 
-## Evening
-
-**Drained by:**
-
-**Energized by:**
-
-**Grateful for:**

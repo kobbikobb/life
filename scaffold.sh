@@ -35,14 +35,6 @@ tags:
 - [ ] Read
 
 ## Notes
-
-## Evening
-
-**Drained by:**
-
-**Energized by:**
-
-**Grateful for:**
 EOF
 
 # Example: daily note
@@ -59,15 +51,7 @@ tags:
 - [ ] Read
 
 ## Notes
-Shipped the auth refactor. Design sync pushed to tomorrow.
-
-## Evening
-
-**Drained by:** Back-to-back meetings until 4pm
-
-**Energized by:** Pair session on the new onboarding flow
-
-**Grateful for:** Team handled the incident without me needing to step in
+Shipped the auth refactor. Design sync pushed to tomorrow. Pair session on onboarding went well.
 EOF
 
 # Example: goals
