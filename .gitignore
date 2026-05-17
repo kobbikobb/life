@@ -1,17 +1,27 @@
-# Ignore everything by default
+# Ignore vault content — only track templates, structure, and docs
 /*
 
-# Allow .gitkeep files to keep folders tracked
+# Folders to keep (empty scaffolding)
+!goals/
 !goals/.gitkeep
-!habits/.gitkeep
-!journal/.gitkeep
+!daily/
+!daily/.gitkeep
+!todo/
 !todo/.gitkeep
+!todo/archive/
 !todo/archive/.gitkeep
-!_custom-templates/.gitkeep
+!projects/
+!projects/.gitkeep
+!notes/
+!notes/.gitkeep
+!references/
+!references/.gitkeep
+!references/*.md
 
-# Keep all files inside _templates
+# Templates and docs
+!/_templates/
 !/_templates/**
- 
-# Keep README and .gitignore
 !README.md
+!HOME.md
+!LICENSE
 !.gitignore
