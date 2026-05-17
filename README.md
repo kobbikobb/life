@@ -70,6 +70,19 @@ All templates use a consistent set of properties designed for Obsidian Bases fil
 
 `categories` uses Obsidian wiki-links so every reference note backlinks to its category index page automatically.
 
+## When to use what
+
+| Folder | When | Cadence |
+|--------|------|---------|
+| `daily/` | Check habits morning, reflect evening | Daily |
+| `todo/` | Anything that needs doing — work or personal | Ongoing |
+| `goals/` | Set direction for the next 6 months, check in monthly | Twice a year |
+| `notes/` | Meeting just happened, idea worth keeping, decision to capture | Ad hoc |
+| `projects/` | Initiative that spans multiple weeks | Ad hoc |
+| `references/` | Person to remember, book/movie to track, article worth keeping | Ad hoc |
+
+If it's something you *do* → todo. If it's something you *think* → note. If it's something you *track over time* → reference or project.
+
 ## Todo convention
 
 Tasks are split into Work / Personal sections within each tier. Prefix is optional — the section heading does the grouping. For tasks linked to an external tracker (Jira, Linear), add the issue key inline:
