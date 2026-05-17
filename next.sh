@@ -59,7 +59,7 @@ if [ "$DOW" -eq 1 ]; then
     echo "$ACTIVE" | while read -r p; do echo "  · $p"; done
     echo ""
   fi
-  echo "↳ Monday: review 2-soon and 3-someday"
+  echo "↳ Monday: review 2-soon and 3-someday, write weekly note"
   echo ""
 fi
 
