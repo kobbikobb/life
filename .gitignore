@@ -20,6 +20,9 @@ projects/*
 !notes/
 !notes/.gitkeep
 notes/*
+!meetings/
+!meetings/.gitkeep
+meetings/*
 !references/
 !references/.gitkeep
 references/*
