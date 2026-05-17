@@ -28,6 +28,8 @@ for category in Books People Meetings Articles Projects Movies; do
 tags:
   - index
 ---
+
+![[${category}.base]]
 EOF
   fi
 done

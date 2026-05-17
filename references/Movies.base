@@ -1,0 +1,29 @@
+filters: 'file.hasLink("Movies")'
+
+views:
+  - type: table
+    name: "To watch"
+    filters:
+      and:
+        - 'status == "to-watch"'
+    order:
+      - file.name
+      - year
+
+  - type: table
+    name: "Done"
+    filters:
+      and:
+        - 'status == "done"'
+    order:
+      - file.name
+      - rating
+      - year
+
+  - type: table
+    name: "All"
+    order:
+      - file.name
+      - status
+      - rating
+      - year

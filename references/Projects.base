@@ -1,0 +1,20 @@
+filters: 'file.hasLink("Projects")'
+
+views:
+  - type: table
+    name: "Active"
+    filters:
+      and:
+        - 'status == "active"'
+    order:
+      - file.name
+      - context
+      - date
+
+  - type: table
+    name: "All"
+    order:
+      - file.name
+      - status
+      - context
+      - date

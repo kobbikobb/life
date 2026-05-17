@@ -8,6 +8,10 @@ tags:
 - [[todo/1-today|Today]]
 - [[todo/2-soon|Soon]]
 
+## Active projects
+
+![[Projects.base#Active]]
+
 ## Capture
 
 - [[_templates/daily|Daily]] · [[_templates/meeting|Meeting]] · [[_templates/note|Note]]

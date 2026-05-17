@@ -1,0 +1,22 @@
+filters: 'file.hasLink("Articles")'
+
+views:
+  - type: table
+    name: "All"
+    order:
+      - file.name
+      - author
+      - rating
+      - topics
+      - via
+
+  - type: table
+    name: "Top rated"
+    filters:
+      and:
+        - 'rating >= 4'
+    order:
+      - file.name
+      - author
+      - rating
+      - topics
