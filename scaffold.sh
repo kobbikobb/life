@@ -1,28 +1,40 @@
 #!/bin/bash
 set -e
 
+if [ ! -f "_templates/daily.md" ]; then
+  echo "Error: run from vault root" >&2
+  exit 1
+fi
+
 TODAY=$(date +%Y%m%d)
 DATE=$(date +%Y-%m-%d)
 YEAR=$(date +%Y)
 HALF=$([ $(date +%m) -le 6 ] && echo "H1" || echo "H2")
 
-# Todo
-cat _templates/todo-1-today.md > todo/1-today.md
-cat _templates/todo-2-soon.md > todo/2-soon.md
-cat _templates/todo-3-someday.md > todo/3-someday.md
+# Wire up git hooks
+[ -d .githooks ] && git config core.hooksPath .githooks
 
-# Reference index stubs
-for category in Books People Meetings Articles Projects; do
-  cat > "references/${category}.md" << EOF
+# Todo — only create if missing (don't clobber existing tasks)
+[ ! -f todo/1-today.md ] && cat _templates/todo-1-today.md > todo/1-today.md
+[ ! -f todo/2-soon.md ]  && cat _templates/todo-2-soon.md  > todo/2-soon.md
+[ ! -f todo/3-someday.md ] && cat _templates/todo-3-someday.md > todo/3-someday.md
+
+# Reference index stubs — only create if missing
+for category in Books People Meetings Articles Projects Movies; do
+  FILE="references/${category}.md"
+  if [ ! -f "$FILE" ]; then
+    cat > "$FILE" << EOF
 ---
 tags:
-  - category
+  - index
 ---
 EOF
+  fi
 done
 
-# Today's daily note
-cat > "daily/${TODAY}.md" << EOF
+# Today's daily note — only create if missing
+if [ ! -f "daily/${TODAY}.md" ]; then
+  cat > "daily/${TODAY}.md" << EOF
 ---
 date: ${DATE}
 tags:
@@ -36,6 +48,7 @@ tags:
 
 ## Notes
 EOF
+fi
 
 # Example: daily note
 cat > "daily/${TODAY}.example.md" << EOF

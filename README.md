@@ -19,29 +19,34 @@ projects/     ongoing multi-week initiatives
 meetings/     meeting notes (work + personal)
 notes/        ideas, decisions, evergreen thoughts
 references/   people, books, movies, articles
-HOME.md       dashboard
+HOME.md       navigation index
 _templates/   all templates
 ```
 
 ## Getting started
 
 1. Clone or download this repo
-2. Run `git config core.hooksPath .githooks` — enables the pre-commit hook
-3. Run `bash scaffold.sh` — creates todo files, reference index stubs, and today's daily note
-4. Open the folder as an Obsidian vault
-5. Install recommended plugins (see below)
-6. Edit `_templates/daily.md` — replace placeholder habits with your own
+2. Run `bash scaffold.sh` — creates todo files, reference index stubs, today's daily note, and wires up git hooks
+3. Open the folder as an Obsidian vault
+4. Install recommended plugins (see below)
+5. Edit `_templates/daily.md` — replace placeholder habits with your own
+
+## Daily CLI
+
+`bash next.sh` prints today's status: habits done, open todos, and context-aware nudges (goal focus in the morning, migration reminder in the evening, weekly review on Fridays, active projects on Mondays). Run it from the vault root at the start and end of your day.
 
 ## Templates
 
 | Template | Use for | Folder |
 |----------|---------|--------|
 | `daily.md` | habits checklist + evening reflection | `daily/` |
+| `weekly.md` | end-of-week review | `notes/` |
 | `goals.md` | half-year goals with metrics | `goals/` |
 | `meeting.md` | any meeting (work or personal) | `meetings/` |
 | `note.md` | idea or evergreen thought | `notes/` |
 | `project.md` | ongoing multi-week initiative | `projects/` |
 | `person.md` | contact | `references/` |
+| `coworker.md` | coworker with strengths + review notes | `references/` |
 | `book.md` | book to read or finished | `references/` |
 | `article.md` | saved article or web clip | `references/` |
 
@@ -68,7 +73,7 @@ All templates use a consistent set of properties designed for Obsidian Bases fil
 | `status` | `to-read` / `reading` / `done` (books) · `active` / `done` (projects) |
 | `rating` | `1–5` |
 | `date` | ISO date — used consistently across all templates |
-| `tags` | `daily` · `0🌱` (seedling idea) · `0🌲` (mature/evergreen idea) |
+| `tags` | `daily` · `weekly` · `0🌱` (seedling idea) · `0🌲` (mature/evergreen idea) |
 
 `categories` uses Obsidian wiki-links so every reference note backlinks to its category index page automatically.
 
@@ -88,7 +93,7 @@ If it's something you *do* → todo. If it's something you *think* → note. If 
 
 ## Todo
 
-Three static files — you edit them directly, never recreate them:
+Three static files — you edit them directly:
 
 | File | Purpose |
 |------|---------|
@@ -128,9 +133,11 @@ Tasks use Work / Personal sections so you see everything in one place without mi
 
 | Plugin | Why |
 |--------|-----|
-| **Templater** | Auto-fills `date`, slugs, and filenames — required |
-| **Dataview** | Turns category index pages into live queryable tables |
-| **Periodic Notes** | Automates daily file creation on vault open |
+| **QuickAdd** | One-keystroke capture — trigger any template from the command palette, auto-names the file |
+| **Templater** | Auto-fills `date` and slugs in templates (optional — `next.sh` handles daily note creation without it) |
+| **Shell Commands** | Run `next.sh` from inside Obsidian via hotkey or vault-open event |
+
+**Obsidian Bases** (built-in since Obsidian 1.8) handles category index views natively — no Dataview needed. The `categories` wikilinks in every template are already wired for it.
 
 ## License
 
