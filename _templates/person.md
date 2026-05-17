@@ -1,6 +1,6 @@
 ---
 categories:
-  - People
+  - "[[People]]"
 date: 
 context: work
 org: 

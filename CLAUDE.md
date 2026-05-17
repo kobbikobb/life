@@ -21,7 +21,7 @@ All templates share a consistent set of YAML fields:
 
 | Field | Type | Used in | Values |
 |-------|------|---------|--------|
-| `categories` | list | most types | `Meetings`, `People`, `Books`, `Articles`, `Projects` |
+| `categories` | list of wikilinks | most types | `"[[Meetings]]"`, `"[[People]]"`, `"[[Books]]"`, `"[[Articles]]"`, `"[[Projects]]"` |
 | `date` | ISO date | all | `YYYY-MM-DD` |
 | `context` | string | meetings, people, projects | `work`, `personal` |
 | `people` | list of wikilinks | meetings | `["[[Name]]"]` |
@@ -29,6 +29,8 @@ All templates share a consistent set of YAML fields:
 | `tags` | list | daily, notes | `daily`, `0🌱`, `0🌲` |
 | `status` | string | books, projects | `to-read`/`reading`/`done` · `active`/`done` |
 | `rating` | integer | books, articles | `1`–`5` |
+
+**Rule:** `categories` values must always use `"[[WikiLink]]"` syntax, never plain strings. Obsidian uses these as backlinks to category index pages in `references/`. Plain strings break the backlink graph.
 
 ## AI use cases
 

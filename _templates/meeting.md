@@ -1,6 +1,6 @@
 ---
 categories:
-  - Meetings
+  - "[[Meetings]]"
 date: 
 context: work
 org: 

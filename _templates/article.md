@@ -1,6 +1,6 @@
 ---
 categories:
-  - Articles
+  - "[[Articles]]"
 date: 
 author: []
 url: 
