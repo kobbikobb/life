@@ -83,9 +83,39 @@ All templates use a consistent set of properties designed for Obsidian Bases fil
 
 If it's something you *do* → todo. If it's something you *think* → note. If it's something you *track over time* → reference or project.
 
-## Todo convention
+## Todo
 
-Tasks are split into Work / Personal sections within each tier. Prefix is optional — the section heading does the grouping. For tasks linked to an external tracker (Jira, Linear), add the issue key inline:
+Three static files — you edit them directly, never recreate them:
+
+| File | Purpose |
+|------|---------|
+| `1-today.md` | What you are doing today |
+| `2-soon.md` | What's coming up next |
+| `3-someday.md` | Backlog — ideas and tasks with no deadline |
+
+Tasks use Work / Personal sections so you see everything in one place without mixing contexts:
+
+```markdown
+## Work
+- [ ] [ENG-123] Finish architecture review
+- [x] Sync with Sara on onboarding
+
+## Personal
+- [ ] Book dentist
+```
+
+**Getting an overview:**
+- *What am I doing today?* → `1-today.md`
+- *What's in progress?* → unchecked items in `1-today.md`
+- *What's done today?* → checked `- [x]` items in `1-today.md`
+- *What's next?* → `2-soon.md`
+- *What's on the backlog?* → `3-someday.md`
+
+**Daily discipline — without this the files rot:**
+1. Morning: review `1-today.md`, pull in anything from `2-soon.md`
+2. Evening: archive completed tasks, push unfinished items back to `2-soon.md` or carry forward deliberately
+
+**For tasks linked to Jira/Linear**, add the issue key inline so you can find the full context:
 
 ```markdown
 - [ ] [ENG-123] Finish architecture review
