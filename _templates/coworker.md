@@ -1,4 +1,5 @@
 ---
+# ⚠ Contains coworker info — do not share with AI tools without consent
 categories:
   - People
 date: 
