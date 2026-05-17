@@ -4,18 +4,25 @@
 # Folders to keep (empty scaffolding)
 !goals/
 !goals/.gitkeep
+goals/*
 !daily/
 !daily/.gitkeep
+daily/*
 !todo/
 !todo/.gitkeep
+todo/*
 !todo/archive/
 !todo/archive/.gitkeep
+todo/archive/*
 !projects/
 !projects/.gitkeep
+projects/*
 !notes/
 !notes/.gitkeep
+notes/*
 !references/
 !references/.gitkeep
+references/*
 
 # Templates, script, and docs
 !/_templates/
