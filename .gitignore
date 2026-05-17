@@ -18,11 +18,9 @@
 !references/.gitkeep
 !references/*.md
 
-# Templates, examples, and docs
+# Templates and docs
 !/_templates/
 !/_templates/**
-!/examples/
-!/examples/**
 !README.md
 !HOME.md
 !LICENSE
