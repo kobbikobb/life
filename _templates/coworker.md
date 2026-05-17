@@ -13,6 +13,6 @@ role:
 
 ## Review notes
 
-## 1on1s
+## Meetings
 
 ## Notes
