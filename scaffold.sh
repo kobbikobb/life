@@ -102,7 +102,7 @@ Performing well. Ready for more ownership.
 EOF
 
 # Example: meeting (links back to person)
-cat > "notes/${DATE}-1on1-example.example.md" << EOF
+cat > "meetings/${DATE}-1on1-example.example.md" << EOF
 ---
 categories:
   - Meetings
