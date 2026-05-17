@@ -16,7 +16,8 @@ goals/        half-year direction
 daily/        one file per day — habits + reflection
 todo/         all tasks (work + personal)
 projects/     ongoing multi-week initiatives
-notes/        meetings, ideas, evergreen thoughts
+meetings/     meeting notes (work + personal)
+notes/        ideas, decisions, evergreen thoughts
 references/   people, books, movies, articles
 HOME.md       dashboard
 _templates/   all templates
@@ -36,7 +37,7 @@ _templates/   all templates
 |----------|---------|--------|
 | `daily.md` | habits checklist + evening reflection | `daily/` |
 | `goals.md` | half-year goals with metrics | `goals/` |
-| `meeting.md` | any meeting (work or personal) | `notes/` |
+| `meeting.md` | any meeting (work or personal) | `meetings/` |
 | `note.md` | idea or evergreen thought | `notes/` |
 | `project.md` | ongoing multi-week initiative | `projects/` |
 | `person.md` | contact | `references/` |
@@ -49,7 +50,8 @@ _templates/   all templates
 |--------|---------|---------|
 | `daily/` | `YYYYMMDD.md` | `20260517.md` |
 | `goals/` | `YYYY-HX.md` | `2026-H1.md` |
-| `notes/` | `YYYY-MM-DD-slug.md` | `2026-05-17-1on1-john.md` |
+| `meetings/` | `YYYY-MM-DD-slug.md` | `2026-05-17-1on1-john.md` |
+| `notes/` | `YYYY-MM-DD-slug.md` | `2026-05-17-systems-thinking.md` |
 | `projects/` | `slug.md` | `eng-hiring-q2.md` |
 | `references/` | `Name.md` | `John Smith.md`, `Blade Runner.md` |
 | `todo/` | fixed files | `1-today.md`, `2-soon.md`, `3-someday.md` |
@@ -76,7 +78,8 @@ All templates use a consistent set of properties designed for Obsidian Bases fil
 | `daily/` | Check habits morning, reflect evening | Daily |
 | `todo/` | Anything that needs doing — work or personal | Ongoing |
 | `goals/` | Set direction for the next 6 months, check in monthly | Twice a year |
-| `notes/` | Meeting just happened, idea worth keeping, decision to capture | Ad hoc |
+| `meetings/` | Meeting just happened | Ad hoc |
+| `notes/` | Idea worth keeping, decision to capture | Ad hoc |
 | `projects/` | Initiative that spans multiple weeks | Ad hoc |
 | `references/` | Person to remember, book to track, article worth keeping | Ad hoc |
 
