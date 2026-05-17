@@ -25,10 +25,10 @@ _templates/   all templates
 ## Getting started
 
 1. Clone or download this repo
-2. Open the folder as an Obsidian vault
-3. Install recommended plugins (see below)
-4. Edit `_templates/daily.md` — replace placeholder habits with your own
-5. Copy a template to start your first note
+2. Run `bash scaffold.sh` — creates todo files, reference index stubs, and today's daily note
+3. Open the folder as an Obsidian vault
+4. Install recommended plugins (see below)
+5. Edit `_templates/daily.md` — replace placeholder habits with your own
 
 ## Templates
 
@@ -41,7 +41,6 @@ _templates/   all templates
 | `project.md` | ongoing multi-week initiative | `projects/` |
 | `person.md` | contact | `references/` |
 | `book.md` | book to read or finished | `references/` |
-| `movie.md` | movie to watch or watched | `references/` |
 | `article.md` | saved article or web clip | `references/` |
 
 ## Naming conventions
@@ -61,9 +60,9 @@ All templates use a consistent set of properties designed for Obsidian Bases fil
 
 | Field | Values |
 |-------|--------|
-| `categories` | `[[Meetings]]`, `[[People]]`, `[[Books]]`, `[[Movies]]`, `[[Articles]]`, `[[Projects]]` |
+| `categories` | `[[Meetings]]`, `[[People]]`, `[[Books]]`, `[[Articles]]`, `[[Projects]]` |
 | `context` | `work`, `personal` |
-| `status` | `to-read` / `reading` / `done` (books) · `to-watch` / `watched` (movies) · `active` / `done` (projects) |
+| `status` | `to-read` / `reading` / `done` (books) · `active` / `done` (projects) |
 | `rating` | `1–5` |
 | `date` | ISO date — used consistently across all templates |
 | `tags` | `daily` · `0🌱` (seedling idea) · `0🌲` (mature/evergreen idea) |
@@ -79,7 +78,7 @@ All templates use a consistent set of properties designed for Obsidian Bases fil
 | `goals/` | Set direction for the next 6 months, check in monthly | Twice a year |
 | `notes/` | Meeting just happened, idea worth keeping, decision to capture | Ad hoc |
 | `projects/` | Initiative that spans multiple weeks | Ad hoc |
-| `references/` | Person to remember, book/movie to track, article worth keeping | Ad hoc |
+| `references/` | Person to remember, book to track, article worth keeping | Ad hoc |
 
 If it's something you *do* → todo. If it's something you *think* → note. If it's something you *track over time* → reference or project.
 

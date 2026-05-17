@@ -8,9 +8,6 @@
 !daily/.gitkeep
 !todo/
 !todo/.gitkeep
-!todo/1-today.md
-!todo/2-soon.md
-!todo/3-someday.md
 !todo/archive/
 !todo/archive/.gitkeep
 !projects/
@@ -19,11 +16,11 @@
 !notes/.gitkeep
 !references/
 !references/.gitkeep
-!references/*.md
 
-# Templates and docs
+# Templates, script, and docs
 !/_templates/
 !/_templates/**
+!/scaffold.sh
 !README.md
 !HOME.md
 !LICENSE
