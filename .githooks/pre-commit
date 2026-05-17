@@ -1,0 +1,22 @@
+#!/bin/bash
+# Enforce Obsidian wiki-link syntax for categories in staged files.
+# Plain strings like "  - Meetings" break backlinks to category index pages.
+
+CATEGORIES="Meetings|People|Books|Articles|Projects|Movies"
+
+files=$(git diff --cached --name-only | grep -E '^_templates/.*\.md$|^scaffold\.sh$')
+[ -z "$files" ] && exit 0
+
+violations=$(echo "$files" | xargs grep -En "^  - ($CATEGORIES)$" 2>/dev/null)
+
+if [ -n "$violations" ]; then
+  echo "pre-commit: plain-string categories found — use wiki-link syntax instead"
+  echo ""
+  echo "$violations" | while IFS= read -r line; do
+    echo "  $line"
+  done
+  echo ""
+  echo "Fix: categories must use \"[[Category]]\" not plain strings"
+  echo "  - \"[[Meetings]]\"   not   - Meetings"
+  exit 1
+fi

@@ -14,5 +14,5 @@ tags:
 
 ## Browse
 
-- [[references/People|People]] · [[references/Meetings|Meetings]] · [[references/Projects|Projects]]
+- [[meetings|Meetings]] · [[references/People|People]] · [[references/Projects|Projects]]
 - [[references/Books|Books]] · [[references/Movies|Movies]] · [[references/Articles|Articles]]

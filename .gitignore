@@ -4,23 +4,37 @@
 # Folders to keep (empty scaffolding)
 !goals/
 !goals/.gitkeep
+goals/*
 !daily/
 !daily/.gitkeep
+daily/*
 !todo/
 !todo/.gitkeep
+todo/*
 !todo/archive/
 !todo/archive/.gitkeep
+todo/archive/*
 !projects/
 !projects/.gitkeep
+projects/*
 !notes/
 !notes/.gitkeep
+notes/*
+!meetings/
+!meetings/.gitkeep
+meetings/*
 !references/
 !references/.gitkeep
-!references/*.md
+references/*
 
-# Templates and docs
+# Templates, script, hooks, and docs
 !/_templates/
 !/_templates/**
+!/.githooks/
+!/.githooks/**
+!/scaffold.sh
+!/next.sh
+!CLAUDE.md
 !README.md
 !HOME.md
 !LICENSE
