@@ -25,7 +25,9 @@ notes/*
 meetings/*
 !references/
 !references/.gitkeep
+!references/*.base
 references/*
+!references/*.base
 
 # Templates, script, hooks, and docs
 !/_templates/

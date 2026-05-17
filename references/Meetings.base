@@ -1,0 +1,23 @@
+filters: 'file.hasLink("Meetings")'
+
+views:
+  - type: table
+    name: "Recent"
+    limit: 30
+    order:
+      - file.name
+      - date
+      - people
+      - topics
+
+  - type: table
+    name: "Work"
+    filters:
+      and:
+        - 'context == "work"'
+    limit: 50
+    order:
+      - file.name
+      - date
+      - people
+      - topics

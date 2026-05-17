@@ -1,0 +1,43 @@
+filters: 'file.hasLink("Books")'
+
+views:
+  - type: table
+    name: "To read"
+    filters:
+      and:
+        - 'status == "to-read"'
+    order:
+      - file.name
+      - author
+      - genre
+      - via
+
+  - type: table
+    name: "Reading"
+    filters:
+      and:
+        - 'status == "reading"'
+    order:
+      - file.name
+      - author
+
+  - type: table
+    name: "Done"
+    filters:
+      and:
+        - 'status == "done"'
+    order:
+      - file.name
+      - author
+      - rating
+      - year
+
+  - type: table
+    name: "All"
+    order:
+      - file.name
+      - author
+      - status
+      - rating
+      - genre
+      - year
