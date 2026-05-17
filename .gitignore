@@ -32,6 +32,7 @@ references/*
 !/_templates/**
 !/scaffold.sh
 !/next.sh
+!CLAUDE.md
 !README.md
 !HOME.md
 !LICENSE
