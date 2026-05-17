@@ -1,101 +1,91 @@
-# 🌱 Life System
+# life
 
-A system for tracking 🎯 goals, ✅ habits, 🪞 journal, and 📋 todos.
+A minimal Obsidian vault template for personal and work life management. Combines the productivity loop (goals, daily habits, todos) with a knowledge layer (notes, references, projects) — inspired by [kepano's vault structure](https://stephango.com/vault).
 
----
+## Philosophy
 
-## 📁 Structure
+- One vault for work and personal
+- Metadata over folders — `categories` frontmatter + Obsidian Bases for filtering
+- Minimal folders, consistent naming, lean templates
+- Plain markdown — works in any editor, git-friendly
 
-📂 Templates
+## Structure
 
-- \_templates/ — Core system templates for all file types to copy from.
-- \_custom-templates/ — Your personal custom templates to override or extend.
+```
+goals/        half-year direction
+daily/        one file per day — habits + reflection
+todo/         all tasks (work + personal)
+projects/     ongoing multi-week initiatives
+notes/        meetings, ideas, evergreen thoughts
+references/   people, books, movies, clippings
+HOME.md       dashboard
+_templates/   all templates
+```
 
-### 🎯 `goals/`
+## Getting started
 
-Long-term direction and focus.  
-• Files named like `YYYY-HX.md` (e.g., `2025-H2.md` for second half of 2025).
+1. Clone or download this repo
+2. Open the folder as an Obsidian vault
+3. Install recommended plugins (see below)
+4. Edit `_templates/daily.md` — replace placeholder habits with your own
+5. Copy a template to start your first note
 
-### ✅ `habits/`
+## Templates
 
-Daily actions that reinforce priorities.  
-• Files named like `YYYYMMDD-day.md` (e.g., `20250630-mon.md`).
+| Template | Use for | Folder |
+|----------|---------|--------|
+| `daily.md` | habits checklist + evening reflection | `daily/` |
+| `goals.md` | half-year goals with metrics | `goals/` |
+| `meeting.md` | any meeting (work or personal) | `notes/` |
+| `note.md` | idea or evergreen thought | `notes/` |
+| `project.md` | ongoing multi-week initiative | `projects/` |
+| `person.md` | contact | `references/` |
+| `book.md` | book to read or finished | `references/` |
+| `movie.md` | movie to watch or watched | `references/` |
+| `clipping.md` | saved article or web clip | `references/` |
 
-### 🪞 `journal/`
+## Naming conventions
 
-Daily reflection and thoughts.  
-• Files named like `YYYYMMDD-reflect.md` (e.g., `20250630-reflect.md`).
+| Folder | Pattern | Example |
+|--------|---------|---------|
+| `daily/` | `YYYYMMDD.md` | `20260517.md` |
+| `goals/` | `YYYY-HX.md` | `2026-H1.md` |
+| `notes/` | `YYYY-MM-DD-slug.md` | `2026-05-17-1on1-john.md` |
+| `projects/` | `slug.md` | `eng-hiring-q2.md` |
+| `references/` | `Name.md` | `John Smith.md`, `Blade Runner.md` |
+| `todo/` | fixed files | `1-today.md`, `2-soon.md`, `3-someday.md` |
 
-### 📋 `todo/`
+## Frontmatter schema
 
-Task management by priority.  
-• `1-today.md` – Do it now.  
-• `2-soon.md` – Up next.  
-• `3-someday.md` – Future ideas or backlog.  
-• `archive/` – Completed tasks stored by date `YYYYMMDD-archive.md` (e.g., `archive/20250630-archive.md`).
+All templates use a consistent set of properties designed for Obsidian Bases filtering.
 
----
+| Field | Values |
+|-------|--------|
+| `categories` | `[[Meetings]]`, `[[People]]`, `[[Books]]`, `[[Movies]]`, `[[Clippings]]`, `[[Projects]]` |
+| `context` | `work`, `personal` |
+| `status` | `to-read` / `reading` / `done` (books) · `to-watch` / `watched` (movies) · `active` / `done` (projects) |
+| `rating` | `1–5` |
+| `date` | ISO date — used consistently across all templates |
+| `tags` | `daily` · `0🌱` (seedling idea) · `0🌲` (mature/evergreen idea) |
 
-## 🔁 Daily Flow
+`categories` uses Obsidian wiki-links so every reference note backlinks to its category index page automatically.
 
-1. **📋 Review Today's Tasks**
+## Todo convention
 
-   - Open `todo/1-today.md` and plan your work.
-   - Add any new tasks or thoughts that came up overnight.
+Tasks are split into Work / Personal sections within each tier. Prefix is optional — the section heading does the grouping. For tasks linked to an external tracker (Jira, Linear), add the issue key inline:
 
-2. **✅ Track Habits**
+```markdown
+- [ ] [ENG-123] Finish architecture review
+```
 
-   - Use `habits/YYYYMMDD-day.md` to mark progress.
-   - Note any blockers or friction points.
+## Recommended plugins
 
-3. **🪞 Reflect in Journal**
+| Plugin | Why |
+|--------|-----|
+| **Templater** | Auto-fills `date`, slugs, and filenames — required |
+| **Dataview** | Turns category index pages into live queryable tables |
+| **Periodic Notes** | Automates daily file creation on vault open |
 
-   - Use `journal/YYYYMMDD-reflect.md` to capture:
-     - What drained me today?
-     - What I am grateful for.
-     - What energized me.
+## License
 
-4. **🧹 Clean Up**
-
-   - Mark completed todos.
-   - Add missing todos.
-   - Move or reschedule anything left behind.
-
----
-
-## 🔄 Weekly Review
-
-- ⏳ Review `todo/2-soon.md` and promote tasks to `1-today.md` as needed.
-- 🧠 Reflect briefly in a weekly journal entry or summary.
-- 🔍 Check if you're aligned with your active goals.
-- 🗄️ Archive completed tasks into `todo/archive/YYYYMMDD-archive.md`.
-
----
-
-## 📆 Monthly Review
-
-1. **🎯 Goals Check-In**
-
-   - Are current goals still relevant.
-   - What’s progressing, what’s stalled.
-
-2. **🪞 Journal Review**
-
-   - Scan the past month’s entries.
-   - Note recurring patterns, issues, or highlights.
-
-3. **✅ Habit Trends**
-
-   - Which habits stuck, which slipped.
-   - Adjust tracking or simplify if needed.
-
-4. **📋 Todo Scan**
-
-   - Review `todo/1-today.md`, `2-soon.md`, and `3-someday.md`.
-   - Archive, delete, or reprioritize stale tasks.
-   - Ensure todos align with current goals and habits.
-
-5. **🧹 System Cleanup**
-
-   - Archive old logs if needed.
-   - Refresh templates or restructure if things feel cluttered.
+MIT
