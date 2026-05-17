@@ -27,9 +27,11 @@ meetings/*
 !references/.gitkeep
 references/*
 
-# Templates, script, and docs
+# Templates, script, hooks, and docs
 !/_templates/
 !/_templates/**
+!/.githooks/
+!/.githooks/**
 !/scaffold.sh
 !/next.sh
 !CLAUDE.md

@@ -26,10 +26,11 @@ _templates/   all templates
 ## Getting started
 
 1. Clone or download this repo
-2. Run `bash scaffold.sh` — creates todo files, reference index stubs, and today's daily note
-3. Open the folder as an Obsidian vault
-4. Install recommended plugins (see below)
-5. Edit `_templates/daily.md` — replace placeholder habits with your own
+2. Run `git config core.hooksPath .githooks` — enables the pre-commit hook
+3. Run `bash scaffold.sh` — creates todo files, reference index stubs, and today's daily note
+4. Open the folder as an Obsidian vault
+5. Install recommended plugins (see below)
+6. Edit `_templates/daily.md` — replace placeholder habits with your own
 
 ## Templates
 
