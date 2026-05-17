@@ -51,6 +51,19 @@ if [ "$HOUR" -ge 16 ]; then
   [ "$OPEN" -gt 0 ] && echo "↳ $OPEN open task(s) — migrate or drop before tomorrow" && echo ""
 fi
 
+# Friday: create weekly review if missing
+if [ "$DOW" -eq 5 ]; then
+  WEEKLY="notes/${DATE}-week.md"
+  if [ ! -f "$WEEKLY" ]; then
+    sed "s/^date:.*$/date: ${DATE}/" _templates/weekly.md > "$WEEKLY"
+    echo "✓ Created weekly review: $WEEKLY"
+    echo ""
+  else
+    echo "↳ Weekly review exists — fill it in before EOD"
+    echo ""
+  fi
+fi
+
 # Monday: active projects + groom reminder
 if [ "$DOW" -eq 1 ]; then
   ACTIVE=$(grep -rl 'status: active' projects/ 2>/dev/null | sed 's|projects/||;s|\.md||')
