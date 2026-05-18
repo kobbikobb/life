@@ -74,6 +74,13 @@ if [ "$DOW" -eq 5 ]; then
   fi
 fi
 
+# First Monday of month: team metrics reminder
+if [ "$DOW" -eq 1 ] && [ "$(date +%d)" -le 7 ]; then
+  MONTH=$(date +%Y-%m)
+  echo "↳ First Monday — run team metrics and save to notes/${MONTH}-team-metrics.md"
+  echo ""
+fi
+
 # Monday: active projects + groom reminder
 if [ "$DOW" -eq 1 ]; then
   ACTIVE=$(grep -rl 'status: active' projects/ 2>/dev/null | sed 's|projects/||;s|\.md||')
