@@ -58,7 +58,7 @@ categories:
   - "[[Meetings]]"   # correct — creates backlink to references/Meetings.md
   - Meetings         # wrong — plain string, no backlink
 ```
-Valid values: `"[[Meetings]]"`, `"[[People]]"`, `"[[Books]]"`, `"[[Articles]]"`, `"[[Projects]]"`.
+Valid values: `"[[Meetings]]"`, `"[[People]]"`, `"[[Teams]]"`, `"[[Books]]"`, `"[[Articles]]"`, `"[[Projects]]"`.
 
 **2. Person and author references must use wiki-links.**
 ```yaml
