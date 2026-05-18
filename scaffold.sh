@@ -20,7 +20,7 @@ HALF=$([ $(date +%m) -le 6 ] && echo "H1" || echo "H2")
 [ ! -f todo/3-someday.md ] && cat _templates/todo-3-someday.md > todo/3-someday.md
 
 # Reference index stubs — only create if missing
-for category in Books People Meetings Articles Projects Movies; do
+for category in Books People Teams Meetings Articles Projects Movies; do
   FILE="references/${category}.md"
   if [ ! -f "$FILE" ]; then
     cat > "$FILE" << EOF

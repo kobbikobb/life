@@ -68,7 +68,7 @@ All templates use a consistent set of properties designed for Obsidian Bases fil
 
 | Field | Values |
 |-------|--------|
-| `categories` | `[[Meetings]]`, `[[People]]`, `[[Books]]`, `[[Articles]]`, `[[Projects]]` |
+| `categories` | `[[Meetings]]`, `[[People]]`, `[[Teams]]`, `[[Books]]`, `[[Articles]]`, `[[Projects]]` |
 | `context` | `work`, `personal` |
 | `status` | `to-read` / `reading` / `done` (books) · `active` / `done` (projects) |
 | `rating` | `1–5` |
